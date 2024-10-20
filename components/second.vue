@@ -1,5 +1,61 @@
 <template>
-    <div class="bg-slate-100 md:grid hidden  p-3 sm:h-fit md:h-full  md:col-span-1 row-span-1 md:row-span-2">
+    <div
+   
+    class="bg-slate-100 md:grid hidden  p-3 sm:h-fit md:h-full  md:col-span-1 row-span-1 md:row-span-2">
+    {{ sharedData.message }}
+        <!-- <div class=" justify-between">
+            <div class="flex flex-col gap-7">
+                
+                <div class="flex flex-wrap gap-4">
+                    <div class="font-semibold p-2 flex flex-col items-center justify-center bg-transparent border-2 rounded-md border-slate-200">
+                        <span>humidité:</span>
+                        <span>81%</span>  
+                    </div>
+                    <div class="font-semibold p-2 flex flex-col items-center justify-center bg-transparent border-2 rounded-md border-slate-200">
+                        <span>humidité:</span>
+                        <span>81%</span>  
+                    </div>
+                    <div class="font-semibold p-2 flex flex-col items-center justify-center bg-transparent border-2 rounded-md border-slate-200">
+                        <span>humidité:</span>
+                        <span>81%</span>  
+                    </div>
+                    <div class="font-semibold p-2 flex flex-col items-center justify-center bg-transparent border-2 rounded-md border-slate-200">
+                        <span>humidité:</span>
+                        <span>81%</span>  
+                    </div>
+                    <div class="font-semibold p-2 flex flex-col items-center justify-center bg-transparent border-2 rounded-md border-slate-200">
+                        <span>humidité:</span>
+                        <span>81%</span>  
+                    </div>
+                    <div class="font-semibold p-2 flex flex-col items-center justify-center bg-transparent border-2 rounded-md border-slate-200">
+                        <span>humidité:</span>
+                        <span>81%</span>  
+                    </div>
+                    <div class="font-semibold p-2 flex flex-col items-center justify-center bg-transparent border-2 rounded-md border-slate-200">
+                        <span>humidité:</span>
+                        <span>81%</span>  
+                    </div>
+                    
+                </div>
+            </div>
+        </div> -->
+        <!-- 
+     
+
+
+        <div class="flex justify-between mb-4">
+            <div class="text-gray-600">Lever du soleil :</div>
+            <div class="font-semibold">07:45</div>
+        </div>
+
+        <div class="flex justify-between mb-4">
+            <div class="text-gray-600">Coucher du soleil :</div>
+            <div class="font-semibold">18:15</div>
+        </div> -->
+    </div>
+    <div 
+     :class="sharedClass ? 'w-full h-1/3' : 'h-16 -z-30 opacity-0 w-16 '"
+    class=" fixed top-2 m-2 bg-slate-500 left-2 rounded transition-all  z-40  p-3 ">
         
         <!-- <div class=" justify-between">
             <div class="flex flex-col gap-7">
@@ -73,7 +129,11 @@
 </template>
 
 <script setup>
+import { useWeatherStore } from '~/stores/weather'
 
+const store = useWeatherStore()
+const sharedClass = computed(() => store.sharedClass) // Booléen retourné
+const sharedData = computed(() => store.sharedData) // Les 
 </script>
 
 <style lang="scss" scoped>

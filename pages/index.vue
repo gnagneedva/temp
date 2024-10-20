@@ -1,5 +1,5 @@
 <template>
-    <div class="grid h-screen md:grid-cols-2 relative font-temp">
+    <div class="grid h-screen grid-cols-3 relative font-temp">
         <Main/>
         <Second/>
     </div>

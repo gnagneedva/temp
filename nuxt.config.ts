@@ -17,5 +17,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxtjs/leaflet'],
+  modules: ['@nuxtjs/leaflet','@pinia/nuxt',],  // Ajouter Pinia ici,
+   // Optionnel: pour activer Pinia Devtools
+   
 })
